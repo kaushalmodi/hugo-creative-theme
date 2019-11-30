@@ -1,16 +1,20 @@
 {{ "<!-- jQuery -->" | safeHTML }}
-<script src="{{ "js/jquery.js" | relURL }}"></script>
+{{ $jquery_js := resources.Get "js/jquery.js" | minify | fingerprint }}
+<script src="{{ $jquery_js.RelPermalink }}"></script>
 
 {{ "<!-- Bootstrap Core JavaScript -->" | safeHTML }}
-<script src="{{ "js/bootstrap.min.js" | relURL }}"></script>
+{{ $bootstrap_js := resources.Get "js/bootstrap.js" | minify | fingerprint }}
+<script src="{{ $bootstrap_js.RelPermalink }}"></script>
 
 {{ "<!-- Plugin JavaScript -->" | safeHTML }}
-<script src="{{ "js/jquery.easing.min.js" | relURL }}"></script>
-<script src="{{ "js/jquery.fittext.js" | relURL }}"></script>
-<script src="{{ "js/wow.min.js" | relURL }}"></script>
+{{ $jquery_fittext_js := resources.Get "js/jquery.fittext.js" | minify | fingerprint }}
+<script src="{{ $jquery_fittext_js.RelPermalink }}"></script>
+{{ $wow_js := resources.Get "js/wow.min.js" | minify | fingerprint }}
+<script src="{{ $wow_js.RelPermalink }}"></script>
 
 {{ "<!-- Custom Theme JavaScript -->" | safeHTML }}
-<script src="{{ "js/creative.js" | relURL }}"></script>
+{{ $creative_js := resources.Get "js/creative.js" | minify | fingerprint }}
+<script src="{{ $creative_js.RelPermalink }}"></script>
 
 {{ if site.Params.available }}
   {{ if site.Params.chat }}
