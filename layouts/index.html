@@ -4,14 +4,17 @@
         {{ partial "head.html" . }}
     </head>
     <body id="page-top">
+        {{ if site.Params.available }}
             {{ if or site.Params.navigation.links.about site.Params.navigation.links.services site.Params.navigation.links.portfolio site.Params.navigation.links.contact }}
                 {{ partial "nav.html" . }}
+            {{ end }}
         {{ end }}
 
         {{ if site.Params.hero }}
             {{ partial "hero.html" . }}
         {{ end }}
 
+        {{ if site.Params.available }}
             {{ if site.Params.about }}
                 {{ partial "about.html" . }}
             {{ end }}
@@ -38,6 +41,7 @@
 
             {{ if site.Data.projects }}
                 {{ partial "modals.html" . }}
+            {{ end }}
         {{ end }}
 
         {{ partial "js.html" . }}

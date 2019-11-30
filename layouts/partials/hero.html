@@ -2,17 +2,24 @@
 <header>
     <div class="header-content">
         <div class="header-content-inner">
-            {{ with .Site.Params.hero.slogan }}
-                <h1>{{ . | markdownify  }}</h1>
-            {{ end }}
-            {{ if and .Site.Params.hero.slogan .Site.Params.hero.subtitle }}
-                <hr>
-            {{ end }}
-            {{ with .Site.Params.hero.subtitle }}
-                <p>{{ . | markdownify }}</p>
-            {{ end }}
-            {{ with .Site.Params.hero.buttonText }}
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">{{ . }}</a>
+            {{ if site.Params.available }}
+              {{ with site.Params.hero.slogan }}
+                  <h1>{{ . | markdownify }}</h1>
+              {{ end }}
+              {{ if and site.Params.hero.slogan site.Params.hero.subtitle }}
+                  <!-- <hr> -->
+                  <br />
+                  {{ with site.Params.hero.subtitle }}
+                      <div><div></div>{{ . | markdownify }}</div>
+                  {{ end }}
+              {{ end }}
+              {{ with site.Params.hero.buttonText }}
+                  <a href="#about" class="btn btn-primary btn-xl page-scroll">{{ . }}</a>
+              {{ end }}
+            {{ else }}
+              {{ with site.Params.hero.slogan_notavailable }}
+                  <h1>{{ . | markdownify }}</h1>
+              {{ end }}
             {{ end }}
         </div>
     </div>
