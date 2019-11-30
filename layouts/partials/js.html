@@ -1,13 +1,17 @@
 {{ "<!-- jQuery -->" | safeHTML }}
-<script src="{{ "js/jquery.js" | absURL }}"></script>
+<script src="{{ "js/jquery.js" | relURL }}"></script>
+
 {{ "<!-- Bootstrap Core JavaScript -->" | safeHTML }}
-<script src="{{ "js/bootstrap.min.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap.min.js" | relURL }}"></script>
+
 {{ "<!-- Plugin JavaScript -->" | safeHTML }}
-<script src="{{ "js/jquery.easing.min.js" | absURL }}"></script>
-<script src="{{ "js/jquery.fittext.js" | absURL }}"></script>
-<script src="{{ "js/wow.min.js" | absURL }}"></script>
+<script src="{{ "js/jquery.easing.min.js" | relURL }}"></script>
+<script src="{{ "js/jquery.fittext.js" | relURL }}"></script>
+<script src="{{ "js/wow.min.js" | relURL }}"></script>
+
 {{ "<!-- Custom Theme JavaScript -->" | safeHTML }}
-<script src="{{ "js/creative.js" | absURL }}"></script>
+<script src="{{ "js/creative.js" | relURL }}"></script>
+
 {{ if site.Params.available }}
   {{ if site.Params.chat }}
       <script type="text/javascript">
