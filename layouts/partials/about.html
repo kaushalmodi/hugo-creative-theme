@@ -3,17 +3,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                {{ with .Site.Params.about.headline }}
-                    <h2 class="section-heading">{{ . }}</h2>
-                {{ end }}
-                {{ if and .Site.Params.about.headline .Site.Params.about.description }}
+                    {{ with site.Params.about.headline }}
+                        <h2 class="section-heading">{{ . }}</h2>
+                    {{ end }}
+                {{ if and site.Params.about.headline site.Params.about.description }}
                     <hr class="light">
                 {{ end }}
-                {{ with .Site.Params.about.description }}
-                    <p class="text-faded">{{ . | markdownify }}</p>
+                {{ with site.Params.about.description }}
+                    <div class="text-faded description"><div></div>
+                        {{ . | markdownify }}
+                    </div>
                 {{ end }}
-                {{ with .Site.Params.about.buttonText }}
-                    <a href="#" class="btn btn-default btn-xl">{{ . }}</a>
+                {{ with site.Params.about.buttonText }}
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <a href="#" class="btn btn-default btn-xl">{{ . }}</a>
+                    </div>
                 {{ end }}
             </div>
         </div>
