@@ -2,10 +2,15 @@
 <section class="bg-primary" id="about">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
+            <div class="col-lg-8 col-lg-offset-2">
+                <center>
                     {{ with site.Params.about.headline }}
                         <h2 class="section-heading">{{ . }}</h2>
                     {{ end }}
+                    {{ with site.Params.about.sub_heading }}
+                        <div class="text-faded"><div></div>{{ . | markdownify }}</div>
+                    {{ end }}
+                </center>
                 {{ if and site.Params.about.headline site.Params.about.description }}
                     <hr class="light">
                 {{ end }}
