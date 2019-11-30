@@ -5,7 +5,7 @@ description = "A one page HTML theme for creatives."
 homepage = "//github.com/digitalcraftsman/hugo-creative-theme"
 tags = ["creative", "portfolio"]
 features = ["responsive", "portfolio", "substitutable strings"]
-min_version = 0.14
+min_version = "v0.60.1"
 
 [author]
   name = "digitalcraftsman"
